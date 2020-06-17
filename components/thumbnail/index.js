@@ -13,6 +13,10 @@ const Thumbnail = ({
         <img src={imageUrl} title={caption} className="thumbnail_image" />
         <h4 className="thumbnail_caption">{caption}</h4>
         <style jsx>{`
+          .thumbnail {
+            max-width: 210px;
+          }
+
           .thumbnail_image {
             width: ${small ? "100px" : "100%"};
           }
