@@ -16,7 +16,7 @@ const Home = () => {
 
 Home.getInitialProps = (context) => {
   const { defaultCountry } = cookie.get(context);
-  const country = context.query.country || defaultCountry;
+  const country = context.query.country || defaultCountry || "us";
 
   process.browser
     ? Router.replace("/[country]", `${country}`)
