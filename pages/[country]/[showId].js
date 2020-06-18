@@ -3,10 +3,10 @@ import HTMLReactParser from "html-react-parser";
 import Head from "next/head";
 // import Error from "next/error";
 import Cast from "../../components/Cast";
+import { withAuthorization } from "../../utils/withAuthorization";
 import CustomError from "../_error";
 
-const ShowDetails = ({ show, statusCode }) => {
-  console.log(show);
+const ShowDetails = ({ show, statusCode, ...props }) => {
   const { name, image, summary, _embedded } = show;
 
   if (statusCode) {
@@ -59,4 +59,4 @@ export const getServerSideProps = async ({ query }) => {
   }
 };
 
-export default ShowDetails;
+export default withAuthorization(ShowDetails);
